@@ -7,5 +7,8 @@ export default defineConfig({
     plugins: [ vue() ],
     server: {
         port: 12123
+    },
+    build: {
+        outDir: './docs'
     }
 })

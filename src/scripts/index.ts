@@ -74,15 +74,15 @@ abstract class DartClassGenerator {
     }
 
     private static fromTsInterface(source: string, className: string = 'TemplateClass') {
-
+        return 'TODO: [fromTsInterface]'
     }
 
     private static fromTsType(source: string, className: string = 'TemplateClass') {
-
+        return 'TODO: [fromTsType]'
     }
 
     private static fromRaw(source: string, className: string = 'TemplateClass') {
-
+        return 'TODO: [fromRaw]'
     }
 
     public static parse(sourceType: SourceType, source: string, className: string = 'TemplateClass') {
@@ -95,6 +95,8 @@ abstract class DartClassGenerator {
                 return DartClassGenerator.fromTsType(source, className)
             case 'raw':
                 return DartClassGenerator.fromRaw(source, className)
+            default:
+                return 'Never'
         }
     }
 }
