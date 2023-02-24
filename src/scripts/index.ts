@@ -33,17 +33,7 @@ ${ entries.map(({ name }) => `this.${ name },`).join('\n') }
 ${ entries.map(({ name }) => `${ name } = map['${ name }'];`).join('\n') }
   }
 
-  ${ className }.fromJson(String json) {
-    Map map = {};
-
-    try {
-      map = jsonDecode(json);
-    } catch (err) {
-      print('invalid json. $err');
-    }
-    
-    ${ className }.fromMap(map);
-  }
+  ${ className }.fromJson(String json): this.fromMap(jsonDecode(json));
 
   Map toMap() {    
     return {
